@@ -7,7 +7,14 @@ terraform {
       source  = "hashicorp/aws"
       version = "3.23.0"
     }
+
+    random = {
+      source  = "hashicorp/random"
+      version = "3.0.1"
+    }
+
   }
+
 }
 
 #Configuraçao da aws
@@ -20,8 +27,8 @@ provider "aws" {
 
 
 #Cria um bucket do s3 com o nome micheldias-bucket-terraform
-resource "aws_s3_bucket" "bucket-terraform" {
-  bucket = "micheldias-bucket-terraform"
+resource "aws_s3_bucket" "bucket-1" {
+  bucket = "terraform-micheldias-bucket-test"
   acl    = "private"
 
   tags = {
@@ -33,9 +40,9 @@ resource "aws_s3_bucket" "bucket-terraform" {
 }
 
 #Cria uma instancia do EC2
-resource "aws_instance" "ec2Instance" {
-  ami           = var.aws_instance_ami
-  instance_type = var.aws_instance_type
-
-  tags = var.aws_default_tags
-}
+#resource "aws_instance" "ec2Instance" {
+#  ami           = var.aws_instance_ami
+#  instance_type = var.aws_instance_type
+#
+#  tags = var.aws_default_tags
+#}
