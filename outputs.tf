@@ -9,6 +9,6 @@ output "bucket_domain_name" {
 }
 
 output "file_path" {
-    value = "${aws_s3_bucket.bucket-1.bucket}/${aws_s3_bucket_object.bucket-2.key}"
-    description = "Caminho do arquivo"
+  value       = "${aws_s3_bucket.bucket-1.bucket}/${aws_s3_bucket_object.bucket-2.key}"
+  description = "Caminho do arquivo"
 }
